@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a493d8c2-52b7-4a69-a61d-7f9cd7f58fa1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/herbawi/wesam/AverageExpert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/herbawi/wesam/DivisionExpert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/herbawi/wesam/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/herbawi/wesam/SumExpert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/herbawi/wesam/AverageExpertTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/herbawi/wesam/DivisionExpertTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/herbawi/wesam/SumExpertTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="a493d8c2-52b7-4a69-a61d-7f9cd7f58fa1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,7 +163,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1677177251780</updated>
-      <workItem from="1677177253575" duration="7178000" />
+      <workItem from="1677177253575" duration="7601000" />
     </task>
     <servers />
   </component>
