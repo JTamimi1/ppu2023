@@ -11,7 +11,7 @@ class SumExpertTest {
         SumExpert sumExpert = new SumExpert();
         int sum = sumExpert.sum(5, 5, 5, 5);
 
-        assertEquals(59, sum);
+        assertEquals(20, sum);
 
     }
     @Test
