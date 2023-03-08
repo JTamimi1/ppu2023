@@ -12,7 +12,7 @@ class DivisionExpertTest {
 
         double r = divisionExpert.divide(10, 2);
 
-        assertEquals(2, r);
+        assertEquals(5, r);
     }
 
     @Test
