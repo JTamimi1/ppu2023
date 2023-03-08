@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a493d8c2-52b7-4a69-a61d-7f9cd7f58fa1" name="Changes" comment="Israa first commit">
-      <change beforePath="$PROJECT_DIR$/src/test/java/herbawi/wesam/AverageExpertTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/herbawi/wesam/AverageExpertTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/herbawi/wesam/DivisionExpertTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/herbawi/wesam/DivisionExpertTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
