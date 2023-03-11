@@ -10,7 +10,7 @@ class AverageExpertTest {
     @Test
     public void testAvg(){
         SumExpert sumExpert = mock(SumExpert.class);
-        when(sumExpert.sum(5,5,5,5)).thenReturn(35);
+        when(sumExpert.sum(5,5,5,5)).thenReturn(20);
         //test this code
 
         AverageExpert averageExpert = new AverageExpert(sumExpert);
