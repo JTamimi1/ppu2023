@@ -1,5 +1,8 @@
 package herbawi.wesam;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class Main {
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
@@ -9,6 +12,6 @@ public class Main {
         System.out.println("sum = " + sumExpert.sum(numbers));
         System.out.println("average= "+ averageExpert.avg(numbers));
         System.out.println(numbers[3]+"/" + numbers[1] + "= " +  divisionExpert.divide(numbers[3],numbers[1]));
-
+        SpringApplication.run(Main.class, args);
     }
 }
