@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a493d8c2-52b7-4a69-a61d-7f9cd7f58fa1" name="Changes" comment="Israa first commit" />
+    <list default="true" id="a493d8c2-52b7-4a69-a61d-7f9cd7f58fa1" name="Changes" comment="adding end point" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -202,7 +202,14 @@
       <option name="project" value="LOCAL؜" />
       <updated>1678204708434</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adding end point">
+      <created>1678817513351</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678817513351</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +229,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ma3ali Commit 1" />
     <MESSAGE value="Israa first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Israa first commit" />
+    <MESSAGE value="adding end point" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding end point" />
   </component>
 </project>
