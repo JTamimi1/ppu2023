@@ -22,7 +22,7 @@ jobs:
       with:
         java-version: 18
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn clean install
 
   Deploy:
     needs: build
@@ -42,14 +42,14 @@ jobs:
        HOST: ${{ secrets.AZURE_SERVER_IP }}
        USERNAME: ${{ secrets.AZURE_USR }}
        KEY: ${{ secrets.AZURE_SERVER_KEY }}
-       source: "target/1.0-SNAPSHOT.jar"
+       source: "target/ppu-1.0-SNAPSHOT.jar"
        target: "deployment"
     - name: run jar via ssh
       uses: fifsky/ssh-action@master
       with:
        script: |
         cd ~/deployment/target
-        java -jar 1.0-SNAPSHOT.jar
+        java -jar ppu-1.0-SNAPSHOT.jar
        HOST: ${{ secrets.AZURE_SERVER_IP }}
        USER: ${{ secrets.AZURE_USR }}
        KEY: ${{ secrets.AZURE_SERVER_KEY }}
