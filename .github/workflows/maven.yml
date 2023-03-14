@@ -46,7 +46,7 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: deploy
       uses: appleboy/scp-action@master
-      with:
+      env:
        host: ${{ secrets.AZURE_SERVER_IP }}
        username: ${{ secrets.AZURE_USR }}
        key: ${{ secrets.AZURE_SERVER_KEY }}
