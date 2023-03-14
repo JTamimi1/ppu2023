@@ -39,9 +39,9 @@ jobs:
     - name: deploy
       uses: appleboy/scp-action@master
       with:
-       host: ${{ secrets.AZURE_SERVER_IP }}
-       username: ${{ secrets.AZURE_USR }}
-       key: ${{ secrets.AZURE_SERVER_KEY }}
+       HOST: ${{ secrets.AZURE_SERVER_IP }}
+       USERNAME: ${{ secrets.AZURE_USR }}
+       KEY: ${{ secrets.AZURE_SERVER_KEY }}
        source: "target/1.0-SNAPSHOT.jar"
        target: "deployment"
     - name: run jar via ssh
@@ -50,6 +50,6 @@ jobs:
        script: |
         cd ~/deployment/target
         java -jar 1.0-SNAPSHOT.jar
-       host: ${{ secrets.AZURE_SERVER_IP }}
-       user: ${{ secrets.AZURE_USR }}
-       key: ${{ secrets.AZURE_SERVER_KEY }}
+       HOST: ${{ secrets.AZURE_SERVER_IP }}
+       USER: ${{ secrets.AZURE_USR }}
+       KEY: ${{ secrets.AZURE_SERVER_KEY }}
