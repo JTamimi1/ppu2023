@@ -45,7 +45,7 @@ jobs:
        source: "target/ppu-1.0-SNAPSHOT.jar"
        target: "deployment"
     - name: run jar via ssh
-      uses: fifsky/ssh-action@master
+      uses: appleboy/ssh-action@master
       with:
        script: |
         cd ~/deployment/target
