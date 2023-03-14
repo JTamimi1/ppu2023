@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a493d8c2-52b7-4a69-a61d-7f9cd7f58fa1" name="Changes" comment="Israa first commit">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbawi/wesam/AverageExpert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbawi/wesam/AverageExpert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/herbawi/wesam/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbawi/wesam/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/herbawi/wesam/SumExpert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbawi/wesam/SumExpert.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +183,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677177251780</updated>
       <workItem from="1677177253575" duration="7601000" />
-      <workItem from="1678735199782" duration="2076000" />
+      <workItem from="1678735199782" duration="4535000" />
     </task>
     <task id="LOCAL-00001" summary="Ma3ali Commit 1">
       <created>1678124089020</created>
