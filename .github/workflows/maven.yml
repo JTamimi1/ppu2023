@@ -50,6 +50,7 @@ jobs:
        host: ${{ secrets.AZURE_SERVER_IP }}
        username: ${{ secrets.AZURE_USR }}
        key: ${{ secrets.AZURE_SERVER_KEY }}
+      with:
        source: "target/1.0-SNAPSHOT.jar"
        target: "deployment"
     - name: run jar via ssh
