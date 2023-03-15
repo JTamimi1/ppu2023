@@ -51,5 +51,7 @@ jobs:
        USERNAME: ${{ secrets.AZURE_USR }}
        KEY: ${{ secrets.AZURE_SERVER_KEY }}
        script: |
-        cd ~/deployment/target
-        java -jar ppu-1.0-SNAPSHOT.jar
+        #cd ~/deployment/target
+        #java -jar ppu-1.0-SNAPSHOT.jar
+        sudo systemctl stop swe.service
+        sudo systemctl start swe.service
