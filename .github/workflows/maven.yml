@@ -58,6 +58,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with: 
          command: |
+          sudo chmod 777 /var/run/docker.sock
           docker pull ma3ali/ppu2023:latest
           sudo docker stop ppu
           sudo docker rm -f ppu
