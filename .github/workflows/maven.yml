@@ -12,6 +12,8 @@ on:
 
 jobs:
   build:
+    env:
+      env-file: my-environment-file.env
 
     runs-on: ubuntu-latest
 
