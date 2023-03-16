@@ -29,7 +29,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: myjar
-        path: build/libs/ppu-1.0-SNAPSHOT.jar
+        path: target/ppu-1.0-SNAPSHOT.jar
   
   docker:
     name: build image and publish
