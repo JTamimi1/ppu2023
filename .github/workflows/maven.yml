@@ -50,6 +50,7 @@ jobs:
       uses: fifsky/ssh-action@master
       with: 
        command: |
+        sudo chmod 666 /var/run/docker.sock
         docker pull ma3ali/ppu2023:latest
         docker stop ppu
         docker system prune -f
