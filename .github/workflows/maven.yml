@@ -37,7 +37,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ma3ali/ppu2023:${{ github.sha }}
+        tags: ma3ali/ppu2023:latest
 
     
   Deploy:
@@ -50,10 +50,10 @@ jobs:
       uses: fifsky/ssh-action@master
       with: 
        command: |
-        docker pull ma3ali/ppu2023:${{ github.sha }}
+        docker pull ma3ali/ppu2023:latest
         docker stop ppu
         docker system prune -f
-        docker run -d -p 8080:8080 --name ppu ma3ali/ppu2023:${{ github.sha }}
+        docker run -d -p 8080:8080 --name ppu ma3ali/ppu2023:latest
        host: ${{ secrets.DOCKER_SERVER_IP }}
        user: ${{ secrets.AZURE_USR }}
        key: ${{ secrets.DOCKER_SERVER_KEY }}
