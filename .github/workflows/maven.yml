@@ -45,15 +45,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - uses: azure/webapps-container-deploy@v1
-      with:
-        app-name: myapp
-        images: ma3ali/ppu2023:${{ github.sha }}
-        multi-container-config-file: ''
-    
+ 
+    - name: ssh connect and run container
+      uses: fifsky/ssh-action@master
+      with: 
+       command: |
+        docker pull ma3ali/ppu2023:latest
+        docker stop ppu
+        docker system prune -f
+        docker run -d -p 8080:8080 --name ppu ma3ali/ppu2023:latest
+       host: ${{ secrets.DOCKER_SERVER_IP }}
+       user: ${{ secrets.AZURE_USR }}
+       key: ${{ secrets.DOCKER_SERVER_KEY }}
+       
+       
     - name: fetch code
       uses: actions/checkout@v2
     - name: Set up JDK 18
