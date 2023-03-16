@@ -29,7 +29,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: myjar
-        path: target/ppu-1.0-SNAPSHOT.jar
+        path: build/libs/ppu-1.0-SNAPSHOT.jar
   
   docker:
     name: build image and publish
@@ -40,10 +40,11 @@ jobs:
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }}
           -p ${{ secrets.DOCKER_PASSWORD }}
-      - name: Download jar file artifact
+      - name: Download jar file
         uses: actions/download-artifact@v2
         with:
           name: myjar
+          path: build/libs/
       - name: Build Docker image
         run: docker build -t ma3ali/ppu2023:latest .
       - name: Publish Docker image
