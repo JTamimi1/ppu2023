@@ -59,6 +59,7 @@ jobs:
         with: 
          command: |
           sudo chmod 777 /var/run/docker.sock
+          sudo systemctl stop swe.service
           docker pull ma3ali/ppu2023:latest
           sudo docker stop mycontainer
           sudo docker rm -f mycontainer
