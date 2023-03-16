@@ -60,6 +60,7 @@ jobs:
          command: |
           docker pull ma3ali/ppu2023:latest
           docker stop ppu
+          docker rm ppu
           docker system prune -f
           docker run -d -p 8080:8080 --name ppu ma3ali/ppu2023:latest
          host: ${{ secrets.DOCKER_SERVER_IP }}
