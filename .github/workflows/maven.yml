@@ -43,7 +43,7 @@ jobs:
       - name: Download jar file artifact
         uses: actions/download-artifact@v2
         with:
-          name: my-jar-file
+          name: myjar
       - name: Build Docker image
         run: docker build -t ma3ali/ppu2023:latest .
       - name: Publish Docker image
