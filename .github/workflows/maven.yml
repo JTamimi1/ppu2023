@@ -25,41 +25,44 @@ jobs:
         java-version: 18
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-      
+  
+  docker:
+    name: build image and publish
+    runs-on: ubuntu-18.04
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }}
+          -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build Docker image
+        run: docker build -t ma3ali/ppu2023:latest .
+      - name: Publish Docker image
+        run: docker push ma3ali/ppu2023
 
-    - name: Login to Docker Hub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-    - name: Build and Push Docker image
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        push: true
-        tags: ma3ali/ppu2023:latest
-
-    
+  redeploy:
+    needs: [docker]
+    runs-on: ubuntu-latest
+    steps:
+      - name: ssh connect and run container
+        uses: fifsky/ssh-action@master
+        with: 
+         command: |
+          docker pull ma3ali/ppu2023:latest
+          docker stop ppu
+          docker system prune -f
+          docker run -d -p 8080:8080 --name ppu ma3ali/ppu2023:latest
+         host: ${{ secrets.DOCKER_SERVER_IP }}
+         user: ${{ secrets.AZURE_USR }}
+         key: ${{ secrets.DOCKER_SERVER_KEY }}
+       
+  
   Deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
     
- 
-    - name: ssh connect and run container
-      uses: fifsky/ssh-action@master
-      with: 
-       command: |
-        sudo chmod 777 /var/run/docker.sock
-        docker pull ma3ali/ppu2023:latest
-        docker stop ppu
-        docker system prune -f
-        docker run -d -p 8080:8080 --name ppu -it ma3ali/ppu2023:latest
-       host: ${{ secrets.DOCKER_SERVER_IP }}
-       user: ${{ secrets.AZURE_USR }}
-       key: ${{ secrets.DOCKER_SERVER_KEY }}
-       
-       
+        
     - name: fetch code
       uses: actions/checkout@v2
     - name: Set up JDK 18
