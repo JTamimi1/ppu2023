@@ -50,7 +50,7 @@ jobs:
       - name: Publish Docker image
         run: docker push ma3ali/ppu2023
 
-  redeploy:
+  Deploy-To-Azure:
     needs: [docker]
     runs-on: ubuntu-latest
     steps:
@@ -59,12 +59,11 @@ jobs:
         with: 
          command: |
           sudo chmod 777 /var/run/docker.sock
-          sudo systemctl stop swe.service
           docker pull ma3ali/ppu2023:latest
-          sudo docker stop mycontainer
-          sudo docker rm -f mycontainer
+          sudo docker container stop mycontainer
+          sudo docker container rm --force mycontainer
           docker system prune -f
-          docker run -d -p 8080:8081 --name mycontainer ma3ali/ppu2023:latest
+          docker run -d -p 8080:8080 --name mycontainer ma3ali/ppu2023:latest
          host: ${{ secrets.DOCKER_SERVER_IP }}
          user: ${{ secrets.AZURE_USR }}
          key: ${{ secrets.DOCKER_SERVER_KEY }}
