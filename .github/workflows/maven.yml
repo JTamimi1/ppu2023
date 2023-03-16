@@ -28,7 +28,7 @@ jobs:
     - name: Archive jar file
       uses: actions/upload-artifact@v2
       with:
-        name: my-jar-file
+        name: myjar
         path: target/ppu-1.0-SNAPSHOT.jar
   
   docker:
