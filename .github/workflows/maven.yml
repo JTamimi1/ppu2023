@@ -54,7 +54,7 @@ jobs:
         docker pull ma3ali/ppu2023:latest
         docker stop ppu
         docker system prune -f
-        docker run -d -p 8080:8080 --name ppu ma3ali/ppu2023:latest
+        docker run -d -p 8080:8080 --name ppu -it ma3ali/ppu2023:latest
        host: ${{ secrets.DOCKER_SERVER_IP }}
        user: ${{ secrets.AZURE_USR }}
        key: ${{ secrets.DOCKER_SERVER_KEY }}
