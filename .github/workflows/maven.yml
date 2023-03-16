@@ -63,7 +63,7 @@ jobs:
           sudo docker container stop mycontainer
           sudo docker container rm --force mycontainer
           docker system prune -f
-          docker run -d -p 8080:8080 --name mycontainer ma3ali/ppu2023:latest
+          
          host: ${{ secrets.DOCKER_SERVER_IP }}
          user: ${{ secrets.AZURE_USR }}
          key: ${{ secrets.DOCKER_SERVER_KEY }}
