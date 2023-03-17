@@ -64,6 +64,9 @@ jobs:
           sudo docker container rm --force mycontainer
           docker system prune -f
           docker run -d -p 8080:8080 --name mycontainer ma3ali/ppu2023:latest
+          sudo service docker stop
+          sudo service docker start
+
           
           
          host: ${{ secrets.DOCKER_SERVER_IP }}
