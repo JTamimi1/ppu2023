@@ -64,7 +64,7 @@ jobs:
           sudo chmod 777 /var/run/docker.sock
           docker pull ma3ali/ppu2023:latest
           sudo service docker stop
-          sudo rm -rf /var/lib/docker/*
+          sudo rm -rf /var/lib/docker/containers/*
           sudo service docker start
           sudo systemctl stop
           sudo systemctl start
