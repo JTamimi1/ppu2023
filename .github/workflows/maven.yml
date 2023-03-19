@@ -61,16 +61,9 @@ jobs:
         uses: fifsky/ssh-action@master
         with: 
          command: |
-          su root
-          sudo chmod 777 /var/run/docker.sock
+          
           docker pull ma3ali/ppu2023:latest
-          sudo service docker stop
-          sudo systemctl stop
-          sudo rm -rf /var/lib/docker/*
-          sudo service docker start
-          
-          sudo systemctl start
-          
+                   
           sudo docker container stop mycontainer
           sudo docker container rm --force mycontainer
           sudo docker container prune -f
