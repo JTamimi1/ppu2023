@@ -64,9 +64,9 @@ jobs:
           sudo chmod 777 /var/run/docker.sock
           docker pull ma3ali/ppu2023:latest
           
-          sudo docker container stop mycontainer
-          sudo docker container rm --force mycontainer
-          sudo docker system prune -f
+          
+           docker container rm -f mycontainer
+           docker system prune -f
           
           docker run -d -p 8080:8080 --name mycontainer ma3ali/ppu2023:latest
         
