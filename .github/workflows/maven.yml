@@ -65,12 +65,12 @@ jobs:
           sudo chmod 777 /var/run/docker.sock
           docker pull ma3ali/ppu2023:latest
           sudo service docker stop
-          sudo rm -rf /var/lib/docker/containers/*
-          sudo service docker start
           sudo systemctl stop
+          sudo rm -rf /var/lib/docker/*
+          sudo service docker start
+          
           sudo systemctl start
-          docker-sync clean
-          docker rm action-server
+          
           sudo docker container stop mycontainer
           sudo docker container rm --force mycontainer
           sudo docker container prune -f
