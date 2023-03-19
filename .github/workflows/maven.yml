@@ -63,10 +63,7 @@ jobs:
          command: |
           sudo chmod 777 /var/run/docker.sock
           docker pull ma3ali/ppu2023:latest
-          sudo service docker stop
-          sudo rm -f /var/lib/docker/network/files/local-kv.db
-          sudo service docker start
-          exit
+          
           sudo docker container stop mycontainer
           sudo docker container rm --force mycontainer
           docker system prune -f
