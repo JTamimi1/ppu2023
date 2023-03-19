@@ -69,6 +69,8 @@ jobs:
           sudo service docker start
           sudo systemctl stop
           sudo systemctl start
+          docker-sync clean
+          
           sudo docker container stop mycontainer
           sudo docker container rm --force mycontainer
           sudo docker container prune -f
