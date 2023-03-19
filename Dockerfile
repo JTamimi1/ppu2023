@@ -2,7 +2,7 @@
 # Use an official OpenJDK runtime as a parent image
 FROM openjdk
 # Copying the jar file to the "/" directory
-COPY target/ppu-1.0-SNAPSHOT.jar app.jar
+COPY build/lib/ppu-1.0-SNAPSHOT.jar app.jar
 
 # Expose port 8080 for the API
 EXPOSE 8080
