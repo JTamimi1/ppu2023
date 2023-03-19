@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a493d8c2-52b7-4a69-a61d-7f9cd7f58fa1" name="Changes" comment="adding Dockerfile">
+    <list default="true" id="a493d8c2-52b7-4a69-a61d-7f9cd7f58fa1" name="Changes" comment="updating message">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/herbawi/wesam/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/herbawi/wesam/Main.java" afterDir="false" />
     </list>
@@ -196,7 +196,9 @@
       <workItem from="1678735199782" duration="4535000" />
       <workItem from="1678920186528" duration="1969000" />
       <workItem from="1679171404081" duration="55000" />
-      <workItem from="1679231265969" duration="885000" />
+      <workItem from="1679231265969" duration="2259000" />
+      <workItem from="1679248449773" duration="113000" />
+      <workItem from="1679251455086" duration="61000" />
     </task>
     <task id="LOCAL-00001" summary="Ma3ali Commit 1">
       <created>1678124089020</created>
@@ -233,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678921044591</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="updating message">
+      <created>1679233906845</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679233906845</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +264,7 @@
     <MESSAGE value="Israa first commit" />
     <MESSAGE value="adding end point" />
     <MESSAGE value="adding Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding Dockerfile" />
+    <MESSAGE value="updating message" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating message" />
   </component>
 </project>

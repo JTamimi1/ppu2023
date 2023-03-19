@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Main {
     @GetMapping("/message")
     public String message(){
-        return "Congrats ! Ma3ali Work is done" ;
+        return "Welcome to ! Ma3ali Virtual Machine.\n Work is done" ;
     }
 
     public static void main(String[] args) {
