@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Main {
     @GetMapping("/message")
     public String message(){
-        return "Congrats ! your application deployed successfully in Azure Platform. !" ;
+        return "Congrats ! Ma3ali Work is done" ;
     }
 
     public static void main(String[] args) {
