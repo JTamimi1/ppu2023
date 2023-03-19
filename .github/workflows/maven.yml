@@ -52,7 +52,7 @@ jobs:
 
   Deploy-To-Azure:
     needs: [docker]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - name: ssh connect and run container
         uses: fifsky/ssh-action@master
