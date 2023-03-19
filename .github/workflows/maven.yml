@@ -69,6 +69,8 @@ jobs:
           sudo docker container prune -f
           
           docker run -d -p 8080:8080 --name mycontainer ma3ali/ppu2023:latest
+          sudo systemctl stop 
+          sudo systemctl start 
         
           
           
