@@ -40,11 +40,8 @@ jobs:
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }}
           -p ${{ secrets.DOCKER_PASSWORD }}
-      - name: Download jar file
-        uses: actions/download-artifact@v2
-        with:
-          name: myjar
-          path: build/libs/
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
       - name: Build Docker image
         run: docker build -t ma3ali/ppu2023:latest .
       - name: Publish Docker image
@@ -54,6 +51,7 @@ jobs:
     needs: [docker]
     runs-on: ubuntu-18.04
     steps:
+     
       - name: ssh connect and run container
         uses: fifsky/ssh-action@master
         with: 
