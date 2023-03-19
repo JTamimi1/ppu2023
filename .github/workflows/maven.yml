@@ -1,6 +1,6 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
+# test
 name: Java CI with Maven
 
 on:
@@ -12,6 +12,8 @@ on:
 
 jobs:
   build:
+    env:
+      env-file: my-environment-file.env
 
     runs-on: ubuntu-latest
 
@@ -22,12 +24,65 @@ jobs:
       with:
         java-version: 18
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B clean package
+    - name: Archive jar file
+      uses: actions/upload-artifact@v2
+      with:
+        name: myjar
+        path: target/ppu-1.0-SNAPSHOT.jar
+  
+  docker:
+    name: build image and publish
+    runs-on: ubuntu-18.04
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }}
+          -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Download jar file
+        uses: actions/download-artifact@v2
+        with:
+          name: myjar
+          path: build/libs/
+      - name: Build Docker image
+        run: docker build -t ma3ali/ppu2023:latest .
+      - name: Publish Docker image
+        run: docker push ma3ali/ppu2023
 
+  Deploy-To-Azure:
+    needs: [docker]
+    runs-on: ubuntu-latest
+    steps:
+      - name: ssh connect and run container
+        uses: fifsky/ssh-action@master
+        with: 
+         command: |
+          sudo chmod 777 /var/run/docker.sock
+          docker pull ma3ali/ppu2023:latest
+          sudo service docker stop
+          sudo rm -f /var/lib/docker/network/files/local-kv.db
+          sudo service docker start
+          sudo docker container stop mycontainer
+          sudo docker container rm --force mycontainer
+          docker system prune -f
+          
+          docker run -d -p 8080:8080 --name mycontainer ma3ali/ppu2023:latest
+        
+          
+          
+          
+         host: ${{ secrets.DOCKER_SERVER_IP }}
+         user: ${{ secrets.AZURE_USR }}
+         key: ${{ secrets.DOCKER_SERVER_KEY }}
+       
+  
   Deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    
+        
     - name: fetch code
       uses: actions/checkout@v2
     - name: Set up JDK 18
