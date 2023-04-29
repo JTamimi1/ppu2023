@@ -14,7 +14,9 @@ jobs:
   build:
     env:
       env-file: my-environment-file.env
-
+      CLUSTER_NAME: Swecluster
+      RESOURSE_GROUP: Swe
+      
     runs-on: ubuntu-latest
 
     steps:
@@ -52,6 +54,18 @@ jobs:
         run: docker build -t jtamimi/ppu2023:latest .
       - name: Publish Docker image
         run: docker push jtamimi/ppu2023
+        
+      - uses: Azure/aks-set-context@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          cluster-name: ${{ env.CLUSTER_NAME }}
+          resource-group: ${{ env.RESOURSE_GROUP }}
+
+      - uses: Azure/k8s-deploy@v1
+        with:
+          manifests: |
+            kubernetes/deploy.yaml
+
 
 #   Deploy-To-Azure:
 #     needs: [docker]
