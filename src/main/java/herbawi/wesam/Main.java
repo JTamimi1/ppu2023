@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Main {
     @GetMapping("/message")
     public String message(){
-        return "Welcome to ! this is kubernetes test.\n Work is done" ;
+        return "Welcome to ! this is kubernetes test.\n Work is done 30 april" ;
     }
 
     public static void main(String[] args) {
